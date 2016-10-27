@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+    exit 1
+fi
+
 slug=$1
 
 git clone git@bitbucket.org:batanero/bootstrap.git $slug
