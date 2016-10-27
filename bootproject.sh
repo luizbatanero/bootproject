@@ -20,6 +20,8 @@ rm -rf .git
 cd laravel
 composer install && composer run bootstrap
 
+sed -i 's/DB_DATABASE=.*/DB_DATABASE='$slug'/' .env
+
 sed -i "/sites:/a \    - map: $slug.dev\n\      to: /home/vagrant/Code/$slug/public" ~/.homestead/Homestead.yaml
 sed -i "/databases:/a \    - $slug" ~/.homestead/Homestead.yaml
 
