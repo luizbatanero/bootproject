@@ -15,6 +15,8 @@ fi
 git clone git@bitbucket.org:batanero/bootstrap.git $slug
 cd $slug
 
+rm -rf .git
+
 cd laravel
 composer install && composer run bootstrap
 
