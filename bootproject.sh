@@ -27,4 +27,6 @@ sed -i "/databases:/a \    - $slug" ~/.homestead/Homestead.yaml
 
 cd ~/Homestead && vagrant up && vagrant provision
 
+echo "192.168.10.10   $slug.dev" >> /etc/hosts
+
 google-chrome "http://$slug.dev"
