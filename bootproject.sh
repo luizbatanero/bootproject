@@ -7,6 +7,11 @@ fi
 
 slug=$1
 
+if [ -d $slug ]; then
+    echo "The directory already exists"
+    exit 1
+fi
+
 git clone git@bitbucket.org:batanero/bootstrap.git $slug
 cd $slug
 
