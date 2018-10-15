@@ -19,7 +19,8 @@ rm -rf .git
 
 cd laravel
 composer install && composer run bootstrap
+npm install
 
 laradock new $slug
 
-google-chrome "http://$slug.teste"
+npm start
