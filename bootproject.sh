@@ -20,13 +20,6 @@ rm -rf .git
 cd laravel
 composer install && composer run bootstrap
 
-sed -i 's/DB_DATABASE=.*/DB_DATABASE='$slug'/' .env
-
-sed -i "/sites:/a \    - map: $slug.teste\n\      to: /home/vagrant/Code/$slug/public" ~/.homestead/Homestead.yaml
-sed -i "/databases:/a \    - $slug" ~/.homestead/Homestead.yaml
-
-cd ~/Homestead && vagrant up && vagrant provision
-
-echo "192.168.10.10   $slug.teste" >> /etc/hosts
+laradock new $slug
 
 google-chrome "http://$slug.teste"
